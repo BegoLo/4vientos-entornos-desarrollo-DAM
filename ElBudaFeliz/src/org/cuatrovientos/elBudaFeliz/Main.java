@@ -19,6 +19,8 @@ public class Main {
 		
 		Restaurant myRestaurant = new Restaurant();
 		
+		
+		
 		do{
 			System.out.println("----------------Restaurant------------------");
 			System.out.println("Select one option:\n");
