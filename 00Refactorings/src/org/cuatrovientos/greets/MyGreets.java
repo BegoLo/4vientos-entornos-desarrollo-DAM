@@ -4,37 +4,37 @@ package org.cuatrovientos.greets;
  */
 
 /**
- * @author Bad Taste
- * greetz in different languages
+ * @author Bego Lopez
+ * greets in different languages
  */
 public class MyGreets {
 
 	/**
 	 * Greets 
-	 * @param lng chosen language
-	 * @param rep how many times repeat greet
+	 * @param lenguage chosen language
+	 * @param repeat how many times repeat greet
 	 * @return a String with the greeting
 	 */
-	public String greet_method (int lng, int rep) {
-		String strRepeat = "";
-		String greet = "";
+	public String greet (int lenguage, int repeat) {
+		String result = "";
+		String currentGreet = "";
 		
-		switch (lng) {
-			case 0 : greet = "hola";
+		switch (lenguage) {
+			case 0 : currentGreet = "hola";
 					 break;
-			case 1 : greet = "hello";
+			case 1 : currentGreet = "hello";
 					 break;
-			case 2 : greet = "kaixo";
+			case 2 : currentGreet = "kaixo";
 			 		 break;
 			 default:
 				 	 break;	
 		 }
 		
 		// Repeat greet rep times
-		for (int i=0;i<rep;i++) {
-			strRepeat += greet;
+		for (int i=0;i<repeat;i++) {
+			result += currentGreet;
 		}
 		
-		return strRepeat;
+		return result;
 	}
 }
