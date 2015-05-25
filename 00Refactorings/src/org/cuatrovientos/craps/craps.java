@@ -5,32 +5,34 @@ import java.util.Random;
 /**
  * A press-your-luck game where you roll two dices and 
  * when you get the same in both you win.
- * @author nigga 
- * this is the shit ya nigga
+ * @author Bego Lopez 
+ * 
  *
  */
 public class craps {
 
-	double money; // player money
-	double pbet; // players last bet
-	double betz; // total bets
+	private double money; // player money
+	private double playerLastBet; // players last bet
+	private double totalBets; // total bets
 	Random rndom = new Random();
-	int d1, d2;
-	
+	private int d1;
+	private int d2;
 	/**
 	 * constructor, player begins with initial money
-	 * @param mymoney
+	 * @param money
 	 */
-	public craps (double mymoney) {
-		money = mymoney;
+	public craps (double money) {
+		this.money = money;
 	}
 	
 	/**
 	 * player puts bet, and we add random money from other players
+	 * @return 
 	 */
-	public void putb (double plbet) {
-		pbet = plbet;
-		betz = pbet + rndom.nextInt(100);
+	public double putBet (double playerLastBet) {
+		this.playerLastBet = playerLastBet;
+		this.totalBets = this.playerLastBet + rndom.nextInt(100);
+		return totalBets;
 	}
 	
 	/**
@@ -47,26 +49,83 @@ public class craps {
 	 */
 	public boolean winOrwhat () {
 		boolean result = false;
-		
 		if (d1 == d2) {
 			result = true;
 		}
-		
 		return result;
 	}
 	
 	/**
-	 * player loses we substract last bet from total money
+	 * player loses we subtract last bet from total money
 	 */
 	public void lose () {
-		money -= pbet;
+		money -= playerLastBet;
 	}
 
 	/**
 	 * player wins all the money
 	 */
 	public void win () {
-		money += betz;
+		money += totalBets;
 	}
+
+	/**
+	 * @return the money
+	 */
+	public double getMoney() {
+		return money;
+	}
+
+	/**
+	 * @param money the money to set
+	 */
+	public void setMoney(double money) {
+		this.money = money;
+	}
+
+	/**
+	 * @return the playerLastBet
+	 */
+	public double getPlayerLastBet() {
+		return playerLastBet;
+	}
+
+	/**
+	 * @param playerLastBet the playerLastBet to set
+	 */
+	public void setPlayerLastBet(double playerLastBet) {
+		this.playerLastBet = playerLastBet;
+	}
+
+	/**
+	 * @return the totalBets
+	 */
+	public double getTotalBets() {
+		return totalBets;
+	}
+
+	/**
+	 * @param totalBets the totalBets to set
+	 */
+	public void setTotalBets(double totalBets) {
+		this.totalBets = totalBets;
+	}
+
+	/**
+	 * @return the d1
+	 */
+	public int getD1() {
+		return d1;
+	}
+
+
+	/**
+	 * @return the d2
+	 */
+	public int getD2() {
+		return d2;
+	}
+
+
 	
 }

@@ -15,24 +15,24 @@ public class crapsMain {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner reader = new Scanner (System.in);
-		double mny = 0;
-		craps crps = new craps(66.6);
+		double money = 0;
+		craps myCraps = new craps(66.6);
 		
 		do {
 			System.out.println("How much you bet?");
-			mny = reader.nextDouble();
-			crps.putb(mny);
-			crps.roll();
-			System.out.println("You rolled: " + crps.d1 +","+crps.d2);
-			if (crps.winOrwhat()) {
+			money = reader.nextDouble();
+			myCraps.putBet(money);
+			myCraps.roll();
+			System.out.println("You rolled: " + myCraps.getD1() +","+myCraps.getD2());
+			if (myCraps.winOrwhat()) {
 				System.out.println("You win, nigga");
-				crps.win();
+				myCraps.win();
 			} else {
 				System.out.println("You lose, nigga");
-				crps.lose();
+				myCraps.lose();
 			}
-			System.out.println("Your money: " + crps.money);
-		} while (mny != 0);
+			System.out.println("Your money: " + myCraps.getMoney());
+		} while (money != 0);
 	}
 
 }
