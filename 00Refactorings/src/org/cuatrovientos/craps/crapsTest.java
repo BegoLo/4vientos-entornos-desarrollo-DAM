@@ -57,5 +57,23 @@ public class crapsTest {
 			assertTrue("random d2 ok", d2 >=0 && d2 <=5);}
 		}
 	
-	
+	@Test
+	public void winOrwhatTest(){
+		int d1 = 0;
+		int d2 = 0;
+		craps myCraps = new craps(66.6d);
+		for (int i = 0; i<100;i++) {
+			myCraps.roll();
+			d1 = myCraps.getD1();
+			d2 = myCraps.getD2();
+			boolean target = myCraps.winOrwhat();
+			boolean expected;
+			if (d1 == d2){
+				expected = true;
+			}else{
+				expected = false;
+			}
+			assertTrue("", target == expected);
+		}
+	}
 }
