@@ -2,7 +2,7 @@ package org.cuatrovientos.factura;
 
 /**
  * Clase para hacer facturas y aplicar iva
- * @author Programador Bajeril
+ * @author Bego Lopez
  *
  */
 public class Factura {
@@ -74,7 +74,7 @@ public class Factura {
 	 * le aplica un descuento especial fijo
 	 * que se aplica a clientes VIP
 	 */
-	public void descuentoesp () {
+	public void descuentoEspecial () {
 		total = subtotal - (subtotal * IVA_10);
 	}
 

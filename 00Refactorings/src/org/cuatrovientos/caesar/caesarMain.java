@@ -12,9 +12,9 @@ public class caesarMain {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		caesar_cypher cc = new caesar_cypher(3);
-		System.out.println(cc.encrpt("avecaesar"));
-		System.out.println(cc.decrpt("dyhfdhvdu"));
+		CaesarCypher cc = new CaesarCypher(3);
+		System.out.println(cc.encrypter("avecaesar"));
+		System.out.println(cc.decrypter("dyhfdhvdu"));
 		
 	}
 
